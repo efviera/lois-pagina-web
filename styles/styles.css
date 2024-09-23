@@ -1,0 +1,377 @@
+ body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: relative;
+}
+
+.contenedorEncabezado {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedorEncabezado img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0.85) blur(2px); /* Ajusta este valor para reducir el brillo */
+}
+
+.encabezado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+    max-width: 80%;
+}
+
+#logoLois{
+    width: 15em;
+    height: 15em;
+    filter: blur(0);
+}
+
+h1{
+    font-size: 5em;
+    font-weight: bold;
+    color: #9d2d96;
+}
+
+#subtitulo{
+    font-size: 1.5em;
+}
+
+#somos{
+    margin: 2em 4.5em;
+}
+
+#marca{
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #feb904;
+}
+
+.encabezado button{
+    margin-top: 4em;
+    width: 20em;
+    height: 3em;
+    border: none;
+    border-radius: 10px;
+    background-color: #9d2d96;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.encabezado button:hover{
+    transform: scale(1.1);
+}
+
+#confian{
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em 0;
+    color:#9d2d96;
+    text-shadow: 1px 1px 10px gray;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: calc(100% / 3); /* Muestra 3 logos a la vez */
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide img {
+    width: 50%;
+    display: block;
+    object-fit: contain;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.slide img:hover{
+    transform: scale(1.1);
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.nuestraMarcaContenedor{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#nuestraMarca{
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 1em 0;
+    color: gray;
+}
+
+.articuloNuestraMarca{
+    padding: 2em;
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    width: 80%;
+    display: flex;
+    margin: 1em 3em;
+    align-items: center;
+    justify-content: center;
+}
+
+.articuloNuestraMarca img{
+    width: 15em;
+    height: 15em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px gray;
+    transition: 0.3s;
+}
+
+.articuloNuestraMarca img:hover{
+    transform: scale(1.1);
+}
+
+.infoMarca{
+    margin: 0 3em;
+}
+
+.infoMarca h4 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: #9d2d96;
+}
+
+.productosextrasContenedor{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.lois{
+    background-color: rgb(85, 85, 85);
+    color: white;
+}
+
+.lois h4{
+    color: #feb904;
+}
+
+.descargarCatalogos{
+    margin: 4em 0;
+    width: 100%;
+    height: 30em;
+    background-color: rgb(122, 122, 122);
+    border-radius: 30px 0;
+}
+
+.catalogosContenedor{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pdfContenedor{
+    width: 40%;
+    height: 70%;
+}
+
+.pdfContenedor img{
+    width: 100%;
+    height: 100%;
+    margin-left: 3em;
+}
+
+.textoCatalogos{
+    height: 35%;
+    margin: 0 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+}
+
+.textoCatalogos h3{
+    font-weight: bold;
+    color: #feb904;
+    font-size: 2em;
+    margin: 0 4em;
+}
+
+.textoCatalogos p{
+    color: white;
+    margin: 0 8em;
+}
+
+.contacto{
+    width: 100%;
+    height: 35em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedorEmail{
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 50px 50PX 0;
+}
+
+.contenedorEmail p{
+    text-align: center;
+    font-size: 2.8em;
+    font-weight: bold;
+    margin: 1em 2em;
+}
+
+#email{
+    width: 60%;
+    height: 2.5em;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#enviarEmail{
+    margin-top: 3em;
+    border: none;
+    height: 3em;
+    width: 6em;
+    border-radius: 10px;
+    background-color: green;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.contenedorWhatsApp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+
+.contenedorWhatsApp a{
+    width: 60%;
+    height: 70%;
+}
+
+.contenedorWhatsApp img{
+    width: 100%;
+    height: 100%;
+}
+
+.contenedorWhatsApp p{
+    font-size: 2em;
+    text-align: center;
+    margin: 1em 2em 0;
+    font-weight: bold;
+}
+
+.pieDePagina{
+    margin-top: 4em;
+    background-color:#9d2d96;
+    width: 100%;
+    height: 15em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pieDePagina img{
+    width: 4em;
+    height: 4em;
+}
+
+#logo{
+    margin: 1em;
+    height: 13em;
+    width: 13em;
+}
+
+.contactoPie{
+    margin-right: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+#direccion{
+    margin: 1em 0;
+    color: white;
+    font-weight: bold;
+}
+
+#numero{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
