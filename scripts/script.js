@@ -1,26 +1,33 @@
-let currentSlide = 0;
-const slidesToShow = 3; // Cantidad de logos visibles a la vez
-const slidesToMove = 3; // Cantidad de logos que se desplazarán por vez
+const containers = document.querySelectorAll('.contenedorFotos'); // Selecciona todos los contenedores
 
-function moveSlide(direction) {
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
-    const maxSlideIndex = Math.ceil(totalSlides / slidesToMove) - 1; // Índice máximo alcanzable
+containers.forEach(container => {
+    const images = container.querySelectorAll('.foto');
     
-    // Calculamos la posición actual del slide, evitando que supere los límites
-    currentSlide += direction;
+    if (images.length > 1) {
+        let currentIndex = 0;
+        const totalImages = images.length;
 
-    // Limita el desplazamiento para evitar que se mueva más allá del último set de imágenes
-    if (currentSlide < 0) {
-        currentSlide = maxSlideIndex;
-    } else if (currentSlide > maxSlideIndex) {
-        currentSlide = 0;
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.remove('active');
+                if (i === index) {
+                    img.classList.add('active');
+                }
+            });
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            showImage(currentIndex);
+        }
+
+        // Muestra la primera imagen al cargar
+        showImage(currentIndex);
+
+        // Cambia la imagen cada 3 segundos solo si hay más de una imagen
+        setInterval(nextImage, 2000);
+    } else {
+        // Si hay una sola imagen, la hacemos visible sin transición
+        images[0].classList.add('active');
     }
-
-    // Mueve el slider según la cantidad de slides a mostrar
-    const movePercentage = (100 / slidesToShow) * slidesToMove;
-    document.querySelector('.slider').style.transform = `translateX(-${currentSlide * movePercentage}%)`;
-}
-
-// Auto-slide cada 3 segundos
-setInterval(() => moveSlide(1), 3000);
+});
